@@ -1,0 +1,82 @@
+// map is JSON file store all game data: map, items, hp statues, etc.
+{
+    // map is rectangle matrix of land tiles, 0-tile is void (unreachable),
+    // number in tile is number of image in landscape.
+    "map": [
+        [0, 0, 1],
+        [0, 1, 1]
+    ],
+    "images": {
+        // landscape images: 0, 1, etc.
+        "land": [
+            "smth.png",
+            "smth1.png"
+        ],
+        "char": [
+            "hero.png",
+            "enemy.png"
+        ],
+        "item": [
+            "weapon.png",
+            "armor.png",
+            "item.png"
+        ]
+    },
+    "chars": {
+        // every character contain pointer to image (0 - "hero.png",
+        // 1 - "enemy.png", and so on),
+        // coordinates of row and col on map (start by 0),
+        // max hp, current hp,
+        // current equipment list,
+        // and hero - inventory list.
+        "hero": [0, 0, 1, 10, 10,
+            {
+                // weapon contain pointer to name in local,
+                // image, range, damage.
+                "weapon": ["weapon_name", 0, 1, 3],
+                // armor - pointer to name, image, protection.
+                "armor": ["armor", 1, 1]
+            },
+            // inventory is just simple list.
+            // potion - pointer to name, image, amount of restore hp.
+            [
+                ["potion", 2, 5],
+                ["potion", 2, 4]
+            ]
+        ]
+        // some entities not need both equipment and inventory.
+        "princess": [0, 0, 0, 10, 5],
+        // enemies have category names and contained in list,
+        // they will be active when player take turn.
+        "enemies": [
+            // name, image, coordinates(row, col), max hp, current hp.
+            ["knight", 2, 2, 1, 12, 12,
+                {
+                    "weapon": ["sword", 0, 1, 2],
+                    "armor": ["armor", 1, 1]
+                }
+            ],
+            ["shadow", 3, 3, 2, 5, 5,
+                {
+                    "weapon": ["arms", null, 1, 1],
+                    "armor": null
+                }
+            ]
+        ]
+    },
+    // items, that stay at map, by category.
+    "items": {
+        "weapons": [
+            // name, image, coordinates (row, col), range, damage.
+            ["sword", 0, 0, 2, 1, 2]
+        ],
+        "armors": [
+            // name, image, coords (row, col), protection.
+            ["armor", 1, 1, 2, 1]
+        ],
+        "potions": [
+            // image, coords, amount of restore hp.
+            [2, 1, 2, 5]
+        ]
+    }
+}

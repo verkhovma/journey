@@ -1,0 +1,38 @@
+{
+    "login": {
+        "header": "Journey - the simple browser RPG",
+        "btns": {
+            "continue": "Continue, as ",
+            "rename_cont": "Rename and continue, as ",
+            "new game": "New Game",
+            "import save": "Import Save"
+        }
+    },
+    "game_ui": {
+        "menu": {
+            "menu": "Menu",
+            "hero": "Hero",
+            "export_save": "Export save",
+            "help": "Help docs"
+        },
+        "hero": {
+            "equip": "Equipment",
+            "store": "Storage",
+            "action": "Action"
+        }
+    },
+    "errors": {
+        "map": "Error: Could not load map"
+    },
+    "chars": {
+        "princess": "Princess",
+        "knight": "Warui Knight",
+        "shadow": "Evil Shadow"
+    },
+    "items": {
+        "sword": "Sword",
+        "arms": "Arms",
+        "armor": "Armor",
+        "potion": "Potion"
+    }
+}
