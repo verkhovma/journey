@@ -6,7 +6,7 @@ export class Tile {
         this.content = document.createElement("img")
         this.content.src = img_href
         this.content.onerror = ()=>{
-            this.content.src = "../images/" + img_href
+            this.content.src = "./images/" + img_href
             return false
         }
     }
