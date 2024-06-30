@@ -25,7 +25,7 @@ export async function load_game(local, new_game_flag){
 
     let game_field = ""
     if(new_game_flag){
-        let map_filename = "../maps/testmap.json"
+        let map_filename = "./maps/testmap.json"
         load_map(map_filename).then((map_dict)=>{
             if(map_dict == false){
                 let div_error = document.createElement("div")
