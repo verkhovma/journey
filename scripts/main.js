@@ -10,7 +10,7 @@ if((lang == undefined) || (lang == "")){
 }
 localStorage.setItem("lang", lang)
 
-lang = "../locals/" + lang + ".json"
+lang = "./locals/" + lang + ".json"
 
 // load and display login page.
 import {load_login_page} from "./login.js"
@@ -18,7 +18,7 @@ load_login_page(lang).then((load_status)=>{
     if(load_status == false){
         lang = "en"
         localStorage.setItem("lang", lang)
-        lang = "../locals/" + lang + ".json"
+        lang = "./locals/" + lang + ".json"
         load_login_page(lang)
     }
 })
