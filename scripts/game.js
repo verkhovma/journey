@@ -26,17 +26,16 @@ export async function load_game(local, new_game_flag){
     let game_field = ""
     if(new_game_flag){
         let map_filename = "./maps/testmap.json"
-        load_map(map_filename).then((map_dict)=>{
-            if(map_dict == false){
-                let div_error = document.createElement("div")
-                div_error.textContent = local["errors"]["map"]
-                main.append(div_error)
-            }else{
-                set_local_data("map_dict", map_dict)
-                game_field = new MapField(map_dict)
-            }
-            main.append(game_field.cast_html())
-        })
+        let map_dict = await load_map(map_filename)
+        if(map_dict == false){
+            let div_error = document.createElement("div")
+            div_error.textContent = local["errors"]["map"]
+            main.append(div_error)
+        }else{
+            set_local_data("map_dict", map_dict)
+            game_field = new MapField(map_dict)
+        }
+        main.append(game_field.cast_html())
     }else{
         let map_dict = await get_local_data("map_dict")
         game_field = new MapField(map_dict)
