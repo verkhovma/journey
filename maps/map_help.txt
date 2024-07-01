@@ -38,10 +38,11 @@
                 "armor": ["armor", 1, 1]
             },
             // inventory is just simple list.
-            // potion - pointer to name, image, amount of restore hp.
+            // for example: potion - object class, pointer to name,
+            // pointer to image, amount of restore hp.
             [
-                ["potion", 2, 5],
-                ["potion", 2, 4]
+                ["potions", "l-potion", 2, 5],
+                ["potions", "s-potion", 2, 3]
             ]
         ]
         // some entities not need both equipment and inventory.
@@ -75,8 +76,8 @@
             ["armor", 1, 1, 2, 1]
         ],
         "potions": [
-            // image, coords, amount of restore hp.
-            [2, 1, 2, 5]
+            // name, image, coords, amount of restore hp.
+            ["potion", 2, 1, 2, 5]
         ]
     }
 }

@@ -59,7 +59,7 @@ export async function load_login_page(lang){
     form_login.onsubmit = ()=>{
         localStorage.setItem("user_name", user_name.value)
 
-        // arg is flag of new game.
+        // second arg is flag of new game.
         if(event.submitter.code == btn_new_game.code)
             load_game(local, true)
         else if(event.submitter.code == btn_continue.code)

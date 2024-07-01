@@ -43,7 +43,7 @@ export async function load_game(local, new_game_flag){
         main.append(game_field.cast_html())
     }
 
-    console.log(game_field)
+
 
     // set user interface.
 
@@ -77,6 +77,8 @@ export async function load_game(local, new_game_flag){
 
     div_char.append(char_head)
 
+
+
     let div_menu = document.createElement("div")
     let menu_opt_export_save = document.createElement("input")
     menu_opt_export_save.type = "button"
@@ -98,6 +100,7 @@ export async function load_game(local, new_game_flag){
     let div_hero = document.createElement("div")
 
     let inv_btns = document.createElement("div")
+
     let inv_btn_equip = document.createElement("input")
     inv_btn_equip.type = "button"
     inv_btn_equip.value = local["game_ui"]["hero"]["equip"]
@@ -115,7 +118,19 @@ export async function load_game(local, new_game_flag){
 
     div_hero.append(inv_btns)
 
+
+
+    let div_inv = document.createElement("div")
+
     let inv_equip = document.createElement("div")
+    div_inv.append(inv_equip)
+    let inv_store = document.createElement("div")
+    inv_store.append(game_field.hero.inventory.cast_html())
+    div_inv.append(inv_store)
+    let inv_action = document.createElement("div")
+    div_inv.append(inv_action)
+
+    div_hero.append(div_inv)
 
     div_char.append(div_hero)
 
