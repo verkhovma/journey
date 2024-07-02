@@ -27,6 +27,10 @@ export async function load_login_page(lang){
     btn_new_game.type = "submit"
     btn_new_game.value = local["login"]["btns"]["new game"]
     btn_new_game.code = 1
+    let file_selector = document.createElement("input")
+    file_selector.type = "file"
+    file_selector.style.display = "none"
+    file_selector.id = "file_selector"
     let btn_import_save = document.createElement("input")
     btn_import_save.type = "button"
     btn_import_save.value = local["login"]["btns"]["import save"]
@@ -35,6 +39,7 @@ export async function load_login_page(lang){
     form_login.append(user_name)
     form_login.append(btn_continue)
     form_login.append(btn_new_game)
+    form_login.append(file_selector)
     form_login.append(btn_import_save)
 
     // check if saved data available,
